@@ -15,7 +15,7 @@ public class PaymentActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     Button btnProceed, btnBackPayment;
     TextView tvSno, tvAmount;
-    boolean isPaid = false; // track payment status
+    boolean isPaid = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

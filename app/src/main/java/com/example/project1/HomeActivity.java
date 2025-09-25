@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent i = new Intent(HomeActivity.this, PaymentActivity.class);
                 i.putExtra("sno", sno);
                 i.putExtra("amount", amount);
-                startActivityForResult(i, 100);  // ✅ expecting result back
+                startActivityForResult(i, 100);
             }
         });
 
