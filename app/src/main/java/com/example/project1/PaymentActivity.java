@@ -28,14 +28,12 @@ public class PaymentActivity extends AppCompatActivity {
         tvSno = findViewById(R.id.tvCustomerNo);
         tvAmount = findViewById(R.id.tvAmount);
 
-        // ✅ Get sno & amount from HomeActivity
         String sno = getIntent().getStringExtra("sno");
         String amount = getIntent().getStringExtra("amount");
 
         tvSno.setText("Customer No: " + sno);
         tvAmount.setText("Bill Amount: " + amount);
 
-        // ✅ Proceed button (make payment)
         btnProceed.setOnClickListener(v -> {
             int selectedId = radioGroup.getCheckedRadioButtonId();
             if (selectedId == -1) {
@@ -48,7 +46,6 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        // ✅ Back button (return to HomeActivity with result)
         btnBackPayment.setOnClickListener(v -> {
             Intent resultIntent = new Intent();
             resultIntent.putExtra("paid", isPaid);

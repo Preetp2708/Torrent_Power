@@ -16,7 +16,6 @@ public class HomeActivity extends AppCompatActivity {
     TextView guest, cno, add, bill;
     Button payment, back;
 
-    // ✅ Track payment status
     boolean isPaid = false;
 
     @Override
@@ -38,7 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         payment = findViewById(R.id.payment);
         back = findViewById(R.id.back);
 
-        // ✅ Get values from MainActivity
         String user = getIntent().getStringExtra("user");
         String pass = getIntent().getStringExtra("pass");
 
@@ -53,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
         add.setText(address);
         bill.setText(amount);
 
-        // ✅ Launch PaymentActivity
         payment.setOnClickListener(v -> {
             if (isPaid) {
                 // If already paid → show message instead of opening payment screen
@@ -66,7 +63,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        // ✅ Back to login → clear data
         back.setOnClickListener(v -> {
             Intent i = new Intent(HomeActivity.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // clears everything
@@ -75,7 +71,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    // ✅ Receive result from PaymentActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
